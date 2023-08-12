@@ -9,6 +9,7 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "paths": {
+            "@/apis/*": ["apis/*"],
             "@/common/*": ["common/*"],
             "@/config/*": ["config/*"],
             "@/controllers/*": ["controllers/*"],
@@ -19,8 +20,7 @@
             "@/routes/*": ["routes/*"],
             "@/services/*": ["services/*"],
             "@/utils/*": ["utils/*"],
-            "@/validations/*": ["validations/*"],
-            "@/apis/*": ["apis/*"]
+            "@/validations/*": ["validations/*"]
         }
     }
 }
