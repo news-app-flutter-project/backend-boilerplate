@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { asyncWrapper, customResponse, createRoutes } from '@/common/index';
-import { createUserRoutes } from '@/routes/user.routes';
+import { createUserRoutes } from '@/routes/test.routes';
 import { StatusCodes } from 'http-status-codes';
-import { userService } from '@/services/index';
+import { testService } from '@/services/index';
 
-class UserController implements Controller {
+class TestController implements Controller {
     public path = '/user';
     public router = Router();
 
@@ -23,10 +23,8 @@ class UserController implements Controller {
 
     private create: RequestResponseHandler = asyncWrapper(async (req, res) => {
         const response = customResponse(res);
-        const { name, email } = req.body;
-        console.log(req.body);
+
         try {
-            // const user = await userService.create({ name, email });
             response.success({ code: StatusCodes.CREATED });
         } catch (err) {
             response.error(err as ErrorData);
@@ -35,14 +33,13 @@ class UserController implements Controller {
 
     private getUser: RequestResponseHandler = asyncWrapper(async (req, res) => {
         const response = customResponse(res);
-        const body = req.body;
-        console.log(body);
+
         try {
-            response.success({ code: StatusCodes.CREATED, data: res });
+            response.success({ code: StatusCodes.CREATED });
         } catch (err) {
             response.error(err as ErrorData);
         }
     });
 }
 
-export default UserController;
+export default TestController;

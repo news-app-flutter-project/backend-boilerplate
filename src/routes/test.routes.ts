@@ -17,19 +17,14 @@ export function createUserRoutes(
     return {
         create: {
             method: 'post',
-            path: `${path}/asdfasf`,
+            path: `${path}`,
             middleware: [
                 upload.single('file'),
                 multerErrorHandling,
-                formValidation(create_user_validation),
+                // formValidation(create_user_validation),
+                payloadValidation(add_neighbor_validation),
             ],
             handler: createHandler,
-        },
-        getUser: {
-            method: 'get',
-            path: `${path}`,
-            middleware: [],
-            handler: getUserHandler,
         },
     };
 }

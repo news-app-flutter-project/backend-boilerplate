@@ -13,6 +13,7 @@ const payloadValidation = (schema: Joi.Schema): RequestHandler => {
                 validationJoiOptions,
             );
             req.body = { ...value };
+
             next();
         } catch (e: any) {
             const errors: string[] = [];
